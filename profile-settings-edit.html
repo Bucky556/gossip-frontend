@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/header.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/profile-settings.css"/>
+    <link rel="stylesheet" href="./css/profile-cabinet.css"/>
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <link rel="stylesheet" href="css/simple-modal.css"/>
+    <title>Profile Update Details</title>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- Header start -->
+    <header class="header">
+        <div class="container">
+            <div class="header_container">
+                <div class="header_box__logo">
+                    <a href="main-menu.html">
+                        <img src="./images/logo.png" alt="Site Logo" class="header_logo"/>
+                    </a>
+                </div>
+                <div class="header_block">
+                    <div class="header_box__input">
+                        <input type="text" placeholder="Search" class="header_input" id="header-search-inputId"/>
+                        <button class="header_search" id="header-search-buttonId" aria-label="Search"></button>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown_toggle" onclick="toggleLanguageDropdown()">
+                            <img src="./images/language.svg" width="24" height="24" alt="Language"/>
+                            <span id="current-lang">EN</span>
+                            <img src="./images/arrow1.svg" alt="Arrow" class="arrow"/>
+                        </div>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <div onclick="setSelectedLanguage('UZ')">UZ</div>
+                            <div onclick="setSelectedLanguage('EN')">EN</div>
+                            <div onclick="setSelectedLanguage('RU')">RU</div>
+                        </div>
+                    </div>
+                    <div class="header_btn__box">
+                        <div class="header_burger__box">
+                            <i class="header_burger"></i>
+                        </div>
+                        <a href="login.html" class="header_btn" id="header_btn_login">Log in</a>
+                        <div class="header_entrance" id="header_entrance">
+                            <button class="header_entrance__toggle" aria-label="User menu">
+                                <img id="header_photo_id" class="header_user_image" src="./images/default-user.png" alt="User Photo">
+                                <span id="header_user_name_id">UserName</span>
+                            </button>
+                            <ul class="header_entrance__menu">
+                                <li>
+                                    <a href="profile-post-list.html">
+                                        <span class="icon" aria-hidden="true">
+                                          <!-- SVG icon -->
+                                        </span>
+                                        Go to Profile
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#logout" onclick="logout()">
+                                        <span class="icon" aria-hidden="true">
+                                          <!-- SVG icon -->
+                                        </span>
+                                        Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Main start -->
+    <section class="profile_tab container">
+        <h2 class="profile_tab_title">Personal Cabinet</h2>
+
+        <!-- Profile tab-->
+        <div class="profile_tab_link__block">
+            <a href="profile-post-list.html" class="profile_tab_link">My Posts</a>
+            <a href="profile-settings.html" class="profile_tab_link active_link securityRequired">Settings</a>
+            <a href="admin-profile.html" class="profile_tab_link securityRequired">Admin Profile</a>
+            <a href="#" class="profile_tab_link">Gossips</a>
+            <div class="profile_tab_line"></div>
+        </div>
+        <!-- Profile end-->
+
+        <!-- Profile update start -->
+        <h3 class="profile_tab_sub_title">Update Profile</h3>
+
+        <div class="bottom-m-3">
+            <h4 class="paragraph-title">Profile Photo</h4>
+            <img src="./images/photo.png" id="profile_settings_photo_id" class="profile_settings_photo" alt="Profile Photo"/>
+            <div>
+                <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)" hidden/>
+                <label for="imageUpload" class="file_label" aria-label="Upload profile photo">Choose File</label>
+                <span id="truePhotoMessageSpan" class="trueNameMessage"></span>
+                <button class="btn btn-primary display-none" id="profile_settings_upload_img_btn_id" onclick="uploadImage()">Save Changes</button>
+            </div>
+        </div>
+
+        <div class="profile-setting_box">
+            <h3 class="paragraph-title">Name</h3>
+            <label class="input_label" for="profile_settings_name">Full Name</label>
+            <input type="text" class="form_input" id="profile_settings_name" aria-describedby="trueNameMessageSpan"/>
+            <span id="trueNameMessageSpan" class="trueNameMessage"></span>
+            <button class="btn btn-primary ml-3" onclick="profileNameUpdate()">Save Changes</button>
+        </div>
+
+        <div class="profile-setting_box">
+            <h3 class="paragraph-title">Password</h3>
+            <label class="input_label" for="profile_settings_current_pswd">Current Password</label>
+            <input type="password" class="form_input" id="profile_settings_current_pswd" aria-describedby="ErrorCurrentPasswordMessageSpan"/>
+            <span id="ErrorCurrentPasswordMessageSpan" class="errorPasswordMessage"></span>
+
+            <label class="input_label" for="profile_settings_new_pswd">New Password</label>
+            <input type="password" class="form_input" id="profile_settings_new_pswd" aria-describedby="truePasswordMessageSpan"/>
+            <span id="truePasswordMessageSpan" class="truePasswordMessage"></span>
+            <button class="btn btn-primary ml-3" onclick="profilePasswordUpdate()">Save Changes</button>
+        </div>
+
+        <div class="profile-setting_box">
+            <h3 class="paragraph-title">Phone / Email</h3>
+            <label class="input_label" for="profile_settings_username">Phone / Email</label>
+            <input type="text" class="form_input" id="profile_settings_username" aria-describedby="trueUsernameMessageSpan ErrorUsernameMessageSpan"/>
+            <span id="trueUsernameMessageSpan" class="truePasswordMessage"></span>
+            <span id="ErrorUsernameMessageSpan" class="errorPasswordMessage"></span>
+            <button class="btn btn-primary ml-3" onclick="profileUserNameChange()">Save Changes</button>
+        </div>
+        <!-- Profile update end -->
+
+    </section>
+    <!-- Main end -->
+</div>
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer_container">
+            <div class="footer_logo__box">
+                <a href="main-menu.html">
+                    <img src="./images/logo2.png" alt="Site Logo" class="header_logo"/>
+                </a>
+            </div>
+            <ul class="footer_list">
+                <li class="footer_item"><a href="#" class="footer_link">About Project</a></li>
+                <li class="footer_item"><a href="#" class="footer_link">Telegram</a></li>
+                <li class="footer_item"><a href="#" class="footer_link">Videohub.uz</a></li>
+                <li class="footer_item"><a href="#" class="footer_link">Dasturlash.uz</a></li>
+                <li class="footer_item">© All rights reserved</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<!-- Modal start -->
+<div id="simpleModalId" class="simple-modal" role="dialog" aria-labelledby="confirmModalTitle" aria-modal="true">
+    <div class="simple-modal-content">
+        <div class="simple-modal-header">
+            <h3 id="confirmModalTitle">Confirm Username Change</h3>
+            <button class="close" onclick="closeModal()" aria-label="Close">&times;</button>
+        </div>
+        <div class="simple-modal-body">
+            <p id="confirmModalResultId" style="color: #0e7c12">Message</p>
+            <label for="profileUserNameChaneConfirmInputId">Enter Confirmation Code</label>
+            <input type="text" class="form_input" id="profileUserNameChaneConfirmInputId" aria-describedby="ErrorCodeSpan"/>
+            <span id="ErrorCodeSpan" class="errorPasswordMessage"></span>
+        </div>
+        <div class="simple-modal-footer">
+            <button class="btn btn-close" onclick="closeModal()">Close</button>
+            <button class="btn btn-primary" onclick="profileUserNameChangeConfirm()">Confirm</button>
+        </div>
+    </div>
+</div>
+<!-- Modal end -->
+
+<script src="./js/header.js"></script>
+<script src="./js/security.js"></script>
+<script type="module" src="./js/profile-settings-edit.js"></script>
+
+</body>
+</html>

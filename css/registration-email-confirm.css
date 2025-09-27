@@ -1,0 +1,15 @@
+.registration-email-confirm-wrapper {
+  display: flex;
+  justify-content: center;  /* gorizontal markazlash */
+  align-items: center;       /* vertikal markazlash */
+  height: 70vh;              /* oynaning ~70% balandligi */
+  text-align: center;
+}
+
+.registrationLast_title {
+  font-size: 28px;
+  font-weight: bold;
+  color: green;
+  display: block !important;
+}
+

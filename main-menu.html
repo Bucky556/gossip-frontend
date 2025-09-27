@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/header.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/main-page.css"/>
+    <link rel="stylesheet" href="./css/post.css"/>
+    <link rel="stylesheet" href="./css/pagination.css"/>
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <title>Giybat.uz</title>
+</head>
+<body>
+<div class="wrapper">
+    <!-- Header start -->
+    <header class="header">
+        <div class="container">
+            <div class="header_container">
+                <div class="header_box__logo">
+                    <a href="main-menu.html">
+                        <img src="./images/logo.png" alt="Giybat.uz" class="header_logo"/>
+                    </a>
+                </div>
+                <div class="header_block">
+                    <div class="header_box__input">
+                        <input type="text" placeholder="Search" class="header_input" id="header-search-inputId"/>
+                        <button class="header_search" id="header-search-buttonId"></button>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown_toggle" onclick="toggleLanguageDropdown()">
+                            <img src="./images/language.svg" width="24" height="24"/>
+                            <span id="current-lang">UZ</span>
+                            <img src="./images/arrow1.svg" alt="arrow" class="arrow"/>
+                        </div>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <div onclick="setSelectedLanguage('UZ')">UZ</div>
+                            <div onclick="setSelectedLanguage('EN')">EN</div>
+                            <div onclick="setSelectedLanguage('RU')">RU</div>
+                        </div>
+                    </div>
+                    <div class="header_btn__box">
+                        <div class="header_burger__box">
+                            <i class="header_burger"></i>
+                        </div>
+                        <a href="login.html" class="header_btn_login" id="header_btn_login">
+                            Log In
+                        </a>
+                        <a href="registration.html" class="header_btn_registration" id="header_btn_registration">
+                            Register
+                        </a>
+                        <div class="header_entrance" id="header_entrance">
+                            <button class="header_entrance__toggle">
+                                <img id="header_photo_id" class="header_user_image" src="./images/default-user.png"
+                                     alt="">
+                                <span id="header_user_name_id">UserName</span>
+                            </button>
+                            <ul class="header_entrance__menu">
+                                <li>
+                                    <a href="profile-post-list.html">
+                                    <span class="icon">
+                                      <svg xmlns="http://www.w3.org/2000/svg"
+                                           width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                                        <path d="M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path d="M14 8s-1 0-1-1-1-4-5-4-5 4-5 4-1 1-1 1v6h12V8z"/>
+                                      </svg>
+                                    </span>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#logout" onclick="logout()">
+                                    <span class="icon">
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                              fill="currentColor" viewBox="0 0 16 16">
+                                            <path d="M11.5 2.5a.5.5 0 0 0-.5-.5H4.707l.147-.146a.5.5 0 0 0-.708-.708l-1.5 1.5a.5.5 0 0 0 0 .708l1.5 1.5a.5.5 0 0 0 .708-.708L4.707 3h6.293a.5.5 0 0 0 .5-.5z"/>
+                                            <path d="M11 14V6H5v8h6zm1 0V6a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1z"/>
+                                         </svg>
+                                     </span>
+                                        Log Out
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <!-- Main start -->
+    <main>
+
+        <!-- Main Post start -->
+        <section class="main-card">
+            <div class="container">
+                <div class="main-card_container">
+                    <div class="main-card_img__box">
+                        <img src="./images/book_first.png" alt="Main Post Image" id="main-card-imageId"/>
+                    </div>
+                    <div class="main-card_content">
+                        <p class="main-card_text" id="main-card-dateId">March 30, 2024</p>
+                        <h2 class="main-card_title" id="main-card-titleId">
+                            "Are they saving their mind?" No, they are draining their phone battery!
+                            Instead, couldn't they gain some knowledge?
+                        </h2>
+                        <a class="main-card_btn" href="post-detail.html" id="main-card-detailBtnId">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Main Post end -->
+
+        <!-- Main Post-List start -->
+        <section class="post-wrapper container">
+            <div class="post_container" id="post_container_id">
+                <!-- Post box start -->
+                <div class="post_box ">
+                    <a href="post-detail.html">
+                        <div class="post_img__box">
+                            <img src="./images/book1.png" alt="Post Image" class="post_img"/>
+                        </div>
+                        <h3 class="post_title">
+                            Mistakes in Learning Programming
+                        </h3>
+                        <p class="post_text">April 14, 2024</p>
+                    </a>
+                </div>
+                <!-- Post box end -->
+            </div>
+        </section>
+        <!-- Main Post-List end -->
+
+        <!-- Pagination start -->
+        <section class="pagination container">
+            <div class="pagination-wrapper" id="paginationWrapperId">
+                <!-- Pagination buttons can be dynamically added here -->
+            </div>
+        </section>
+        <!-- Pagination end -->
+
+    </main>
+    <!-- Main end -->
+
+</div>
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer_container">
+            <div class="footer_logo__box">
+                <a href="main-menu.html">
+                    <img src="./images/logo2.png" alt="Giybat.uz" class="header_logo"/>
+                </a>
+            </div>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    <a href="" class="footer_link">Giybat.uz</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Online Courses</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Videohub.uz</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Dasturlash.uz</a>
+                </li>
+                <li class="footer_item">All rights reserved</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<script src="./js/header.js"></script>
+<script type="module" src="js/main-menu.js"></script>
+<script src="./js/main.js"></script>
+</body>
+</html>

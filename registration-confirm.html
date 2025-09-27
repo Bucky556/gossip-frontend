@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./css/header.css"/>
+    <link rel="stylesheet" href="./css/main.css"/>
+    <link rel="stylesheet" href="./css/registration-confirm.css"/>
+    <link rel="stylesheet" href="./css/footer.css"/>
+    <title>Sign Up Confirmation</title>
+</head>
+<body>
+<div class="wrapper">
+
+    <!-- Header start -->
+    <header class="header">
+        <div class="container">
+            <div class="header_container">
+                <div class="header_box__logo">
+                    <a href="main-menu.html">
+                        <img src="./images/logo.png" alt="Book" class="header_logo"/>
+                    </a>
+                </div>
+                <div class="header_block">
+                    <div class="header_box__input">
+                        <input type="text" placeholder="Search" class="header_input" id="header-search-inputId"/>
+                        <button class="header_search" id="header-search-buttonId"></button>
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown_toggle" onclick="toggleLanguageDropdown()">
+                            <img src="./images/language.svg" width="24" height="24"/>
+                            <span id="current-lang">EN</span>
+                            <img src="./images/arrow1.svg" alt="arrow" class="arrow"/>
+                        </div>
+                        <div class="dropdown-content" id="dropdown-content">
+                            <div onclick="setSelectedLanguage('UZ')">UZ</div>
+                            <div onclick="setSelectedLanguage('EN')">EN</div>
+                            <div onclick="setSelectedLanguage('RU')">RU</div>
+                        </div>
+                    </div>
+                    <div class="header_btn__box">
+                        <div class="header_burger__box">
+                            <i class="header_burger"></i>
+                        </div>
+                        <a href="login.html" class="header_btn" id="header_btn">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header end -->
+
+    <section class="registrationLast" id="registrationLast">
+        <div class="container">
+            <div class="registration-container">
+                <h1 class="registrationLast_title">Sign Up</h1>
+                <p class="registrationLast_text">
+                    To verify your phone number <strong>+998 91 572-12-13</strong>,
+                    please enter the 5-digit code sent to this number.
+                </p>
+                <div class="code-input-container">
+                    <input type="text" maxlength="1" class="code-input"/>
+                    <input type="text" maxlength="1" class="code-input"/>
+                    <input type="text" maxlength="1" class="code-input"/>
+                    <input type="text" maxlength="1" class="code-input"/>
+                    <input type="text" maxlength="1" class="code-input"/>
+                </div>
+                <a href="#" class="resend-link">Resend SMS code</a>
+                <button class="register-btn" onclick="submitForm()">
+                    Sign Up
+                </button>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Footer start -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer_container">
+            <div class="footer_logo__box">
+                <a href="main-menu.html">
+                    <img src="./images/logo2.png" alt="Book" class="header_logo"/>
+                </a>
+            </div>
+            <ul class="footer_list">
+                <li class="footer_item">
+                    <a href="" class="footer_link">About project</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Telegram</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Videohub.uz</a>
+                </li>
+                <li class="footer_item">
+                    <a href="" class="footer_link">Dasturlash.uz</a>
+                </li>
+                <li class="footer_item">© All rights reserved</li>
+            </ul>
+        </div>
+    </div>
+</footer>
+<!-- Footer end -->
+
+<script src="./js/header.js"></script>
+</body>
+</html>
