@@ -1,5 +1,3 @@
-### **2️⃣ Gossip Frontend – README.md (English)**
-
 # Gossip Frontend
 
 ![Frontend Screenshot](./images/Gossip.png)
